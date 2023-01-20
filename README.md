@@ -2,7 +2,7 @@
 
 This global anonymous message board allows you to post a comment and see comments that other people have posted as well. 
 
-Users can type in a comment and press submit to submit the comment and see other comments users on different computers have made. The messages are saved until the site is refreshed from the platform. Messages are displayed from most recently posted to least recently posted.
+Users can type in a comment and press submit to submit the comment and see other comments users on different computers have made. All comments no matter the user or computer is submitted to one message board. The messages are saved until the site is refreshed from the platform. Messages are displayed from most recently posted to least recently posted.
 
 Users cannot submit an empty comment or a comment that has a profanity word in it in the list of words found in the home.html section of the code – if they try to, an error or alert will pop up and prevent them from submititng their comment. If a user types in a comment that exceeds more than 128 characters, the program will not allow more characters in the text box.
 
