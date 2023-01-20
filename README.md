@@ -8,4 +8,4 @@ Users cannot submit an empty comment or a comment that has a profanity word in i
 
 This app was made with a Flask blueprint to write the routes and post requests. All routes are written in the flask_app.py file. The formatting and restrictions on user input was done in HTML and JavaScript, and light styling was applied with CSS. All formatting and restrictions can be found in the home.html function in the templates folder, and this template is rendered with render_template in the flask_app.py file.
 
-The message board can be accessed here: http://eunicekoo.pythonanywhere.com/. No other installations or building instructions are necessary, and this platform was chosen for that exact reason.
+The message board can be accessed here: http://eunicekoo.pythonanywhere.com/. No other installations or building instructions are necessary, and this platform was chosen for that reason.
