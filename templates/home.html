@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <style>
-    h1{ font-size: 40px; font-family: sans-serif; padding: 50 px 50px; }
+    h1{
+        font-size: 40px;
+        font-family: sans-serif;
+        padding: 50 px 50px; }
 
-    p{ font-size: 20px; font-align: center; font-family: sans-serif;
-    border: 2px solid #dedede; background-color: #f1f1f1;
-    border-radius: 5px; padding: 20px 20px; margin: 20px 0; }
+    p{
+        font-size: 20px;
+        font-family: sans-serif;
+        border: 2px solid #dedede;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        padding: 20px 20px;
+        margin: 20px 0; }
 
-    input[type=text]{ width: 50%; padding: 12px 20px;}
+    input[type=text]{
+        width: 50%;
+        padding: 12px 20px;}
 </style>
 
     <body>
@@ -16,14 +27,22 @@
             Anonymous Message Board
         </h1>
 
+        <!--Form method of the message board, post method that runs the function 
+        val() which searches for invalid words.-->
         <form method="POST" onsubmit="return val();">
-            <input type="text" id="text" name="text" minlength="0" maxlength="128" required/><br><br>
+            <input type="text" id="text" name="text" minlength="0" 
+            maxlength="128" required/><br><br>
             <input type="submit" name="submit">
         </form>
 
         <script>
+            // Function val() returns false and doesn't let the user submit 
+            // if the user types in a bad word that is the list of bad words 
+            // anywhere in the input box.
             function val() {
                 text = document.getElementById("text").value;
+                
+                // List of bad words
                 badwords = [
                     'asshole',
                     'bastard',
@@ -36,15 +55,19 @@
                     'stupid'
                     ];
 
+                // runs through the list of words and sees if the input contains that word. 
+                // if it does, an alert is shown and false is returned so the form doesn't 
+                // submit anything
                 for(i=0; i<badwords.length; i++) {
-                    if(badwords[i] == text) {
-                        alert("Please don't post inappropriate language!")
-                        return false;
+                    if(text.includes(badwords[i])) {
+                    alert("Please don't post inappropriate language!")
+                    return false;
                     }
                 }
             }
         </script>
 
+        <!--Writes all the post comments in posts-->
         {% for post in posts%}
         <p>
             {{post.content}}
