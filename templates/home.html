@@ -8,7 +8,6 @@
     border-radius: 5px; padding: 20px 20px; margin: 20px 0; }
 
     input[type=text]{ width: 50%; padding: 12px 20px;}
-
 </style>
 
     <body>
@@ -17,10 +16,34 @@
             Anonymous Message Board
         </h1>
 
-        <form method="POST">
-            <input type="text" name="text" minlength="0" maxlength="128" required/><br><br>
-            <input type="submit">
+        <form method="POST" onsubmit="return val();">
+            <input type="text" id="text" name="text" minlength="0" maxlength="128" required/><br><br>
+            <input type="submit" name="submit">
         </form>
+
+        <script>
+            function val() {
+                text = document.getElementById("text").value;
+                badwords = [
+                    'asshole',
+                    'bastard',
+                    'bitch',
+                    'dick',
+                    'dumb',
+                    'fuck',
+                    'kill',
+                    'sex',
+                    'stupid'
+                    ];
+
+                for(i=0; i<badwords.length; i++) {
+                    if(badwords[i] == text) {
+                        alert("Please don't post inappropriate language!")
+                        return false;
+                    }
+                }
+            }
+        </script>
 
         {% for post in posts%}
         <p>
